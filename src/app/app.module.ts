@@ -7,6 +7,7 @@ import { CadastroComponent } from './cadastro/cadastro.component';
 import { ConsultaComponent } from './consulta/consulta.component';
 import { MenuComponent } from './menu/menu.component';
 import { FooterComponent } from './footer/footer.component';
+import { LandPageComponent } from './land-page/land-page.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { FooterComponent } from './footer/footer.component';
     CadastroComponent,
     ConsultaComponent,
     MenuComponent,
-    FooterComponent
+    FooterComponent,
+    LandPageComponent
   ],
   imports: [
     BrowserModule,
