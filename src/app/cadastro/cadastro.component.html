@@ -1,1 +1,98 @@
-<p>Cadastro Drinks</p>
+
+<div class="container">
+ <h5>CADASTRAR RECEITA</h5>
+  <hr />
+  <div class="row">
+    <form class="col s12" #form="ngForm" (submit)="onSubmit()">
+      <div class="input-field col s12">
+        <input
+          id="input-receita-nome"
+          name="input-receita-nome"
+          type="text"
+          [(ngModel)]="this.receita.nome"
+          #nome="ngModel"
+          required />
+
+            <label class = "active" for="input-receita.nome">Nome do Drink*</label>
+          <div class="red-text" [hidden]="nome.valid || nome.untouched">
+            Por favor, informe o nome do drink.
+          </div>
+          <span
+          class="helper-text"
+          data-error="O campo é inválido"
+          data-success="Ok!"
+        ></span>
+      </div>
+
+        <div class="row">
+         <div class="input-field col s12">
+            <textarea id="textarea-ingred"
+              name="textarea-ingred"
+              class="materialize-textarea"
+              [(ngModel)]="this.receita.ingred"
+              #ingred="ngModel"
+              required></textarea>
+
+              <label class = "active" for="textarea-ingred">Ingredientes*</label>
+              <div class="red-text" [hidden]="ingred.valid || ingred.untouched">
+                Por favor, informe os ingredientes da receita.
+              </div>
+          </div>
+        </div>
+
+          <div class="row">
+            <div class="input-field col s12">
+              <textarea id="textarea-preparo"
+              name="textarea-preparo"
+              class="materialize-textarea"
+              [(ngModel)]="this.receita.modoprep"
+              #modoprep="ngModel"
+              required></textarea>
+              <label class = "active" for="textarea-preparo">Modo de Preparo*</label>
+              <div class="red-text" [hidden]="modoprep.valid || modoprep.untouched">
+                Por favor, informe o modo de preparo.
+              </div>
+            </div>
+          </div>
+
+     <form action="#">
+    <p>
+      <label>
+        <input name="group1" type="radio" checked />
+        <span>Alcoólico</span>
+      </label>
+    </p>
+    <p>
+      <label>
+        <input name="group1" type="radio" />
+        <span>Não Alcoólico</span>
+      </label>
+    </p>
+      </form>
+
+      <form action="#">
+        <div class="file-field input-field">
+          <div class="btn">
+            <span>Inserir Foto</span>
+            <input type="file" multiple>
+          </div>
+
+          <div class="file-path-wrapper">
+            <input class="file-path validate" type="text" placeholder="Upload uma ou mais fotos">
+          </div>
+        </div>
+      </form>
+
+      <button
+      class="btn right"
+      type="submit"
+      [disabled]="!form.valid">
+
+        Salvar Receita
+        <i class="material-icons right">send</i>
+
+      </button>
+
+    </form>
+  </div>
+</div>
