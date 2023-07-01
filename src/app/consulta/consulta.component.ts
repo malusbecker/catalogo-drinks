@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-consulta',
@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./consulta.component.css']
 })
 export class ConsultaComponent {
+
+  @Output() search: EventEmitter<string> = new EventEmitter<string>();
+
+    onSearch(value: string) {
+    this.search.emit(value);
+  }
 
 }

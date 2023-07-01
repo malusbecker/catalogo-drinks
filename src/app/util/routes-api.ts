@@ -1,5 +1,6 @@
 export class RoutesAPI {
 
-  public static readonly CADASTRO = 'http://localhost:4200/cadastro';
+  public static readonly CADASTRO = 'http://localhost:3000/cadastro';
 
 }
+

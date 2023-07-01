@@ -3,12 +3,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { ConsultaComponent } from './consulta/consulta.component';
 import { LandPageComponent } from './land-page/land-page.component';
+import { EditarComponent } from './editar/editar.component';
 
 
 const routes: Routes = [
   { path: 'inicio', component: LandPageComponent },
   { path: 'cadastro', component: CadastroComponent },
   { path: 'consulta', component: ConsultaComponent },
+  {path: 'editar/:receitaId', component: EditarComponent},
   { path: '', redirectTo: 'inicio', pathMatch: 'full' },
 ];
 

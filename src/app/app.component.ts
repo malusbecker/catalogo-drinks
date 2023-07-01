@@ -11,23 +11,8 @@ import {
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent implements OnInit {
-  title = 'Catálogo de Drinks - M Special Drink';
-  isActive = true;
-  isAdmin = true;
-  coords: any;
-  currentDate: Date;
+export class AppComponent  {
 
-  constructor() {
-    this.currentDate = new Date();
-  }
+  title = 'catalago-drinks-app';
 
-  ngOnInit(): void {
-    navigator.geolocation.getCurrentPosition((position) => {
-      this.coords = position.coords;
-    });
-    setInterval(() => {
-      this.currentDate = new Date();
-    }, 1000);
-  }
 }

@@ -13,7 +13,8 @@ import { FooterComponent } from './footer/footer.component';
 import { LandPageComponent } from './land-page/land-page.component';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { ModalComponent } from './modal/modal.component';
+import {NgxWebstorageModule} from 'ngx-webstorage';
+import { EditarComponent } from './editar/editar.component';
 
 
 
@@ -25,7 +26,7 @@ import { ModalComponent } from './modal/modal.component';
     MenuComponent,
     FooterComponent,
     LandPageComponent,
-    ModalComponent
+    EditarComponent
   ],
   imports: [
     BrowserModule,
@@ -34,6 +35,7 @@ import { ModalComponent } from './modal/modal.component';
     FormsModule,
     ReactiveFormsModule,
     CommonModule,
+    NgxWebstorageModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

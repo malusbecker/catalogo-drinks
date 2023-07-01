@@ -1,19 +1,53 @@
 {
-  "posts": [
+  "cadastro": [
     {
       "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "nome": "Mojito",
+      "ingred": "Limão, açúcar, folhas de hortelâ, Rum",
+      "modoprep": "bater",
+      "tipo": "alcoólica"
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "id": 2,
+      "nome": "Caipiroska morango",
+      "ingred": "Morango, açúcar, saquê",
+      "modoprep": "bater",
+      "tipo": "alcoólica"
+    },
+    {
+      "id": "364",
+      "nome": "Alexander",
+      "ingred": "Leite condensado, canela, conhaque",
+      "modoprep": "bater",
+      "tipo": "alcoólica"
+    },
+    {
+      "id": "810",
+      "nome": "Sakeria de maracujá",
+      "ingred": "Sakê, maracujá",
+      "modoprep": "Bater ",
+      "tipo": "alcoólica"
+    },
+    {
+      "id": "98",
+      "nome": "Coquetel de frutas",
+      "ingred": "Frutas de sua preferência: morango, amora, laranja. leite condensado, essência baunilha",
+      "modoprep": "bater as frutas no liquidificador ",
+      "tipo": "não alcoólica"
+    },
+    {
+      "id": "735",
+      "nome": "Drink no abacaxi",
+      "ingred": "meio abacaxi, leite condensado, cachaça ",
+      "modoprep": "Retirar parcialmente a polpa do abacaxi bater no liquidificador com os demais ingredientes e despejar no abacaxi ",
+      "tipo": "alcoólica"
+    },
+    {
+      "id": "198",
+      "nome": "Uva espumante",
+      "ingred": "Uva preta, espumante, gelo",
+      "modoprep": "Bater a uva e peneirar, adicionar espumante e gelo",
+      "tipo": "alcoolica"
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }

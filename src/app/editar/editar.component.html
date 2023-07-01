@@ -1,0 +1,49 @@
+
+<div class="container" *ngIf="revenue">
+  <form class="col s12">
+    <div class="row">
+      <div class="input-field col s12">
+        <input disabled id="input-receita-nome" type="text" class="validate" value="{{ revenue.nome }}">
+        <label for= "input-receita-nome" class="active">Nome do Drink*</label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field col s12">
+        <input disabled id="textarea-ingred" class="materialize-textarea" value="{{ revenue.ingred }}">
+        <label for="textarea-ingred" class="active">Ingredientes</label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field col s12">
+        <input disabled id="textarea-preparo" class="materialize-textarea" value="{{ revenue.modoprep }}">
+        <label for="textarea-preparo" class="active">Modo de Preparo</label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s12">
+        <p>Gênero:</p>
+        <div class="radio-buttons">
+          <label>
+            <input disabled class="with-gap" name="tipo" type="radio" [checked]="revenue.tipo === 'alcoolica'" />
+            <span>Alcoólica</span>
+          </label>
+          <label>
+            <input disabled class="with-gap" name="tipo" type="radio" [checked]="revenue.tipo === 'nalcoolica'" />
+            <span>Não Alcoólica</span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="scol s12">
+        <button class="btn waves-effect waves-light">Editar</button>
+        <button (click)="removerReceita(revenue.id)" class="btn waves-effect waves-light" style="margin-left: 10px;">Excluir</button>
+      </div>
+    </div>
+  </form>
+</div>

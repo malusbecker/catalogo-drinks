@@ -4,28 +4,17 @@ export class Receita {
   public nome?: string;
   public ingred?: string;
   public modoprep?: string;
-  public alcool?: boolean;
-  public nalcool?: boolean;
+  public tipo: string;
 
-  constructor(nome:string) {
+
+  constructor(nome:string, ingred:string, modoprep:string, tipo:string) {
 
     this.id = String(Math.round(Math.random() * 1000));
     this.nome = nome;
-    this.alcool = true;
-    this.nalcool = false;
+    this.ingred = ingred;
+    this.modoprep = modoprep;
+    this.tipo = tipo;
+
     }
-
-    public static clone(receita: Receita) {
-      let u: Receita = new Receita(receita.id);
-      u.id = receita.id;
-      u.nome = receita.nome;
-      u.ingred = receita.ingred;
-      u.modoprep = receita.modoprep;
-      u.alcool = receita.alcool;
-      u.nalcool = receita.nalcool;
-      return u;
-    }
-
-
   }
 

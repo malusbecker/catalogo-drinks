@@ -1,0 +1,4 @@
+{
+"/cadastro": "/cadastro",
+"/cadastro/:id": "/cadastro/:id"
+}
