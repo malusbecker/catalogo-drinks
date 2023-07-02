@@ -48,6 +48,13 @@
       "ingred": "200 ml (4 doses) de tequila\n100 ml (2 doses) de Cointreau\n240 ml de suco de limão\n25ml (1/2 dose) de suco de laranja\n1 fatia de limão\n1 xícara de gelo\nSal",
       "modoprep": "Em um coqueteleira coloque a tequila, o Cointreau, o suco de limão e o gelo picado e chacoalhe bem;.\nEm um pirex despeje o sal de forma uniforme;.\nPegue uma taça, passe o limão na borda e logo em seguida encoste ela no pirex com sal, para fazer a clássica bordinha salgada;.\nColoque uma meia fatia de limão na taça para decorar;.\nCoe a Margarita, despeje o conteúdo na taça e beba com moderação!",
       "tipo": "alcoolica"
+    },
+    {
+      "id": "134",
+      "nome": "teste",
+      "ingred": "teste",
+      "modoprep": "teste",
+      "tipo": "alcoolica"
     }
   ]
 }

@@ -4,8 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --prod --base-href=/catdrink-app/",
-    "ghpages": "angular-cli-ghpages --dir=dist/catalago-drinks",
+    "build": "ng build  --base-href=/catdrink-app/",
+    "ghpages": "angular-cli-ghpages --dir=dist/catdrink-app",
     "deploy": "npm run build & npm run ghpages",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
