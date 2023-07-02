@@ -1,6 +1,6 @@
 import { Receita } from './../model/receita';
 import { Injectable } from '@angular/core';
-import { ReceitaPromiseService } from './receita.promise-service';
+import { CadastroObservableService } from './cadastro.observable-service';
 import { LocalStorageService } from 'ngx-webstorage';
 
 @Injectable({
@@ -8,11 +8,12 @@ providedIn: 'root',
 })
 export class CadastroStorageService {
   private receitas: Receita[] = [];
+  private receita: Receita | undefined
 
 
   constructor(
   private localStorage: LocalStorageService,
-  private receitaPromiseService: ReceitaPromiseService
+  private receitaService: CadastroObservableService
   ){
 
     const storedReceitas = this.localStorage.retrieve('receitas');
@@ -21,78 +22,68 @@ export class CadastroStorageService {
   }
   }
 
-  getReceitas(): Receita[] {
-    this.carregarReceitas();
-    return this.receitas;
+  ngOnInit(): void {
+    this.getReceitas();
   }
 
-  async getReceita(id: string): Promise<Receita | undefined> {
-    return await this.receitaPromiseService.getById(id)
-      .then((receita) => {
-        return receita;
-      })
-      .catch((error) => {
-        console.error('Erro ao obter receita da API:', error);
-        throw error;
-      });
+  getReceita(id : string): void {
+    this.receitaService.getById(id).subscribe({
+      next: (receita) => {
+        this.receita = receita;
+        console.log('Receita localizada');
+      },
+      error: (error) => {
+        this.receita = undefined;
+        console.error('Erro ao buscar receita:', error);
+      }
+    });
   }
 
-   adicionarReceita(receita: Receita): void {
-    this.receitas.push(receita);
-    this.atualizarReceitaLocal();
+  getReceitas(): void {
+    this.receitaService.getAll().subscribe({
+      next: (receitas) => {
+        this.receitas = receitas;
+      },
+      error: (error) => {
+        console.error('Erro ao obter receita:', error);
+      }
+    });
+  }
 
-
-    this.receitaPromiseService.save(receita).catch((error) => {
-      console.error('Erro ao adicionar receita na API:', error);
-      const index = this.receitas.findIndex(r => r.id === receita.id);
-      if (index !== -1) {
-        this.receitas.splice(index, 1);
-        this.atualizarReceitaLocal();
+  salvarReceita(receita: Receita): void {
+    this.receitaService.save(receita).subscribe({
+      next: (novaReceita) => {
+        console.log('Receita salva:', novaReceita);
+        this.getReceitas();
+      },
+      error: (error) => {
+        console.error('Erro ao salvar receita:', error);
       }
     });
   }
 
   atualizarReceita(receita: Receita): void {
-    const index = this.receitas.findIndex(r => r.id === receita.id);
-    if (index !== -1) {
-      this.receitas[index] = receita;
-      this.atualizarReceitaLocal();
-      this.receitaPromiseService.update(receita).catch((error) => {
-        console.error('Erro ao atualizar paciente na API:', error);
-        this.carregarReceitas();
-            });
-    }
-  }
-
-  removerReceita(id: string): void {
-    const index = this.receitas.findIndex(r => r.id === id);
-    if (index !== -1) {
-      const receitaRemovida = this.receitas.splice(index, 1)[0];
-      this.atualizarReceitaLocal();
-      this.receitaPromiseService.remove(id)
-        .catch((error) => {
-          console.error('Erro ao remover paciente na API:', error);
-          this.receitas.push(receitaRemovida);
-          this.atualizarReceitaLocal();
-        });
-    }
-  }
-
-  private atualizarReceitaLocal(): void {
-    this.localStorage.store('receitass', this.receitas);
-  }
-
-  private carregarReceitas(): void {
-    this.receitaPromiseService.getAll().then((receitas) => {
-      this.receitas = receitas;
-      this.atualizarReceitaLocal();
-    }).catch((error) => {
-      console.error('Erro ao carregar receitas da API:', error);
+    this.receitaService.update(receita).subscribe({
+      next: (receitaAtualizada) => {
+        console.log('Receita atualizada:', receitaAtualizada);
+        this.getReceitas();
+      },
+      error: (error) => {
+        console.error('Erro ao atualizar receita:', error);
+      }
     });
   }
 
-  private clearLocalStorage(): void {
-    this.localStorage.clear();
+  removerReceita(id: string): void {
+    this.receitaService.remove(id).subscribe({
+      next: () => {
+        console.log('Receita removida');
+        this.getReceitas();
+      },
+      error: (error) => {
+        console.error('Erro ao remover receita:', error);
+      }
+    });
   }
 
 }

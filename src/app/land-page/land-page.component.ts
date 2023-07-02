@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Output, EventEmitter, OnInit } from '@angular/core';
 import { Receita } from '../model/receita';
-import { CadastroStorageService } from '../cadastro/cadastro.storage.service';
+import { Observable } from 'rxjs';
+import { CadastroObservableService } from '../cadastro/cadastro.observable-service';
 
 
 @Component({
@@ -9,21 +10,32 @@ import { CadastroStorageService } from '../cadastro/cadastro.storage.service';
   styleUrls: ['./land-page.component.css']
 })
 export class LandPageComponent implements OnInit{
-  imageURL: string = 'assets/resources/images/drinks.png';
 
-   receitas: Receita[] = [];
 
-  constructor(private cadastroStorageService: CadastroStorageService) { }
+  receitas$: Observable<Receita[]> | undefined;
+
+
+  @Output() search: EventEmitter<string> = new EventEmitter<string>();
+
+  constructor(private receitaObservable: CadastroObservableService) { }
 
   ngOnInit(): void {
     this.carregarReceitas();
   }
 
+
   carregarReceitas(): void {
-    this.receitas = this.cadastroStorageService.getReceitas();
+    this.receitas$ = this.receitaObservable.getAll();
   }
 
   performSearch(value: string) {
-    console.log('Pesquisando por:', value);
+    console.log('Buscando:', value);
   }
+
+
+    onSearch(value: string) {
+    this.search.emit(value);
+  }
+
 }
+

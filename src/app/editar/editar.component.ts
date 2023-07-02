@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Receita } from '../model/receita';
 import { CadastroStorageService } from '../cadastro/cadastro.storage.service';
+import { CadastroObservableService } from '../cadastro/cadastro.observable-service';
 
 @Component({
   selector: 'app-editar',
@@ -9,30 +10,58 @@ import { CadastroStorageService } from '../cadastro/cadastro.storage.service';
   styleUrls: ['./editar.component.css']
 })
 export class EditarComponent implements OnInit {
-  receitas: Receita[] = [];
- revenue: Receita | undefined;
- receitaId: string | undefined;
+
+ receitas: Receita[] = [];
+ receita!: Receita;
+ receitaOrigem!: Receita;
+ isEditar = false;
 
   constructor(
 
     private route: ActivatedRoute,
     private router : Router,
-    private cadastroStorageService: CadastroStorageService) { }
+    private cadastroStorageService: CadastroStorageService,
+    private cadastroObservable: CadastroObservableService) { }
 
-  async ngOnInit() {
-    this.receitas = this.cadastroStorageService.getReceitas();
+  ngOnInit() {
     const routeParams = this.route.snapshot.paramMap;
-    const revenueIdFromRoute = routeParams.get('receitaId');
+    const receitaIdFromRoute = routeParams.get('receitaId');
 
-    if (revenueIdFromRoute !== null && revenueIdFromRoute !== undefined) {
-      this.revenue = await this.cadastroStorageService.getReceita(revenueIdFromRoute);
+    if (receitaIdFromRoute !== null && receitaIdFromRoute !== undefined) {
+      this.buscarReceita(receitaIdFromRoute);
     } else {
-      console.error('O ID do paciente não foi fornecido.');
+      console.error('O ID da receita não foi fornecido.');
     }
   }
 
-  async removerReceita(id: string): Promise<void> {
-    await this.cadastroStorageService.removerReceita(id);
+  buscarReceita(id: string): void {
+    this.cadastroObservable.getById(id).subscribe({
+      next: (receita) => {
+        this.receita = receita;
+        console.log('Receita localizada');
+      },
+      error: (error) => {
+        console.error('Erro ao buscar receita:', error);
+      }
+    });
+  }
+
+  habilitarEdicao() {
+    this.isEditar = true;
+  }
+
+  cancelarEdicao() {
+    this.isEditar = false;
+    this.receita = this.receitaOrigem;
+  }
+
+  onSubmit(): void {
+    this.isEditar = false;
+    this.cadastroStorageService.atualizarReceita(this.receita);
+  }
+
+  removerReceita(id: string): void {
+    this.cadastroStorageService.removerReceita(id);
     this.router.navigate(['']);
   }
 }

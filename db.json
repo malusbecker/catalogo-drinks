@@ -5,7 +5,7 @@
       "nome": "Mojito",
       "ingred": "Limão, açúcar, folhas de hortelâ, Rum",
       "modoprep": "bater",
-      "tipo": "alcoólica"
+      "tipo": "alcoolica"
     },
     {
       "id": 2,
@@ -26,7 +26,7 @@
       "nome": "Sakeria de maracujá",
       "ingred": "Sakê, maracujá",
       "modoprep": "Bater ",
-      "tipo": "alcoólica"
+      "tipo": "alcoolica"
     },
     {
       "id": "98",
@@ -47,6 +47,20 @@
       "nome": "Uva espumante",
       "ingred": "Uva preta, espumante, gelo",
       "modoprep": "Bater a uva e peneirar, adicionar espumante e gelo",
+      "tipo": "alcoolica"
+    },
+    {
+      "id": "977",
+      "nome": "Margarita",
+      "ingred": "200 ml (4 doses) de tequila/\n100 ml (2 doses) de Cointreau/\n240 ml de suco de limão/\n25ml (1/2 dose) de suco de laranja/\n1 fatia de limão/\n1 xícara de gelo/\nSal /",
+      "modoprep": "Em um coqueteleira coloque a tequila, o Cointreau, o suco de limão e o gelo picado e chacoalhe bem;\nEm um pirex despeje o sal de forma uniforme;\nPegue uma taça, passe o limão na borda e logo em seguida encoste ela no pirex com sal, para fazer a clássica bordinha salgada;\nColoque uma meia fatia de limão na taça para decorar.",
+      "tipo": "alcoolica"
+    },
+    {
+      "id": "625",
+      "nome": "Moscow mulle",
+      "ingred": "200 ml creme de leite fresco/\n1 colher de sopa de açúcar/\nSuco de 1/2 limão taiti/\n1 colher de sopa de gengibre ralado (na hora)\nIngredientes do drink: \n20 ml de suco de limão/\n20 ml de xarope de açúcar/\n2 dash de Angostura bitter/\n50 ml de vodka/\nGelo a gosto",
+      "modoprep": "Em uma tigela gelada, coloque o creme de leite, o açúcar, o suco de limão, o gengibre e bata até quase chegar no ponto de chantilly (o ponto certo é quando você levantar o batedor e a espuma cair lentamente). Reserve;/\nEm uma caneca de cobre, coloque o suco de limão, o xarope, a Angostura, a vodka, o gelo e misture bem com uma colher bailarina;/\nAdicione a espuma por cima do drink;\n",
       "tipo": "alcoolica"
     }
   ]

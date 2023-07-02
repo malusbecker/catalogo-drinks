@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { Receita } from '../model/receita';
 import { CadastroStorageService } from './cadastro.storage.service';
 import { Router } from '@angular/router';
@@ -21,7 +21,7 @@ export class CadastroComponent implements OnInit {
   }
 
   adicionarReceita(receita: Receita): void {
-    this.cadastroStorageService.adicionarReceita(receita);
+    this.cadastroStorageService.salvarReceita(receita);
     this.router.navigate(['/editar', receita.id]);
   }
 
@@ -29,8 +29,5 @@ export class CadastroComponent implements OnInit {
     this.adicionarReceita(this.receita);
   }
 
-  removerReceita(id: string): void {
-    this.cadastroStorageService.removerReceita(id);
-  }
 
 }

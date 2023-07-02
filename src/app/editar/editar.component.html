@@ -1,49 +1,135 @@
 
-<div class="container" *ngIf="revenue">
+<div class="container" *ngIf="receita && !isEditar">
   <form class="col s12">
     <div class="row">
       <div class="input-field col s12">
-        <input disabled id="input-receita-nome" type="text" class="validate" value="{{ revenue.nome }}">
-        <label for= "input-receita-nome" class="active">Nome do Drink*</label>
+        <input disabled id="input-receita-nome" type="text" class="validate" value="{{ receita.nome }}">
+        <label for= "input-receita-nome" class="active">Nome do Drink</label>
       </div>
     </div>
 
     <div class="row">
       <div class="input-field col s12">
-        <input disabled id="textarea-ingred" class="materialize-textarea" value="{{ revenue.ingred }}">
+        <input disabled id="textarea-ingred" class="materialize-textarea" value="{{ receita.ingred }}">
         <label for="textarea-ingred" class="active">Ingredientes</label>
       </div>
     </div>
 
     <div class="row">
       <div class="input-field col s12">
-        <input disabled id="textarea-preparo" class="materialize-textarea" value="{{ revenue.modoprep }}">
+        <input disabled id="textarea-preparo" class="materialize-textarea" value="{{ receita.modoprep }}">
         <label for="textarea-preparo" class="active">Modo de Preparo</label>
       </div>
     </div>
 
     <div class="row">
       <div class="col s12">
-        <p>Gênero:</p>
+        <p>Tipo:</p>
         <div class="radio-buttons">
           <label>
-            <input disabled class="with-gap" name="tipo" type="radio" [checked]="revenue.tipo === 'alcoolica'" />
+            <input disabled class="with-gap" name="tipo" type="radio" [checked]="receita.tipo === 'alcoolica'" />
             <span>Alcoólica</span>
           </label>
           <label>
-            <input disabled class="with-gap" name="tipo" type="radio" [checked]="revenue.tipo === 'nalcoolica'" />
+            <input disabled class="with-gap" name="tipo" type="radio" [checked]="receita.tipo === 'nalcoolica'" />
             <span>Não Alcoólica</span>
           </label>
         </div>
       </div>
     </div>
 
-
     <div class="row">
       <div class="scol s12">
-        <button class="btn waves-effect waves-light">Editar</button>
-        <button (click)="removerReceita(revenue.id)" class="btn waves-effect waves-light" style="margin-left: 10px;">Excluir</button>
+        <button (click)="habilitarEdicao()" class="btn waves-effect waves-light">Editar
+          <i class="material-icons right">edit</i>
+        </button>
+        <button (click)="removerReceita(receita.id)" class="btn waves-effect waves-light" style="margin-left: 10px;">Excluir
+          <i class="material-icons right">delete</i>
+        </button>
       </div>
     </div>
+
   </form>
+</div>
+
+
+<div class="container">
+  <form class="col s12" *ngIf="isEditar" #Form="ngForm" (submit)="onSubmit()">
+
+    <div class="row">
+      <div class="input-field col s12">
+        <input
+          id="input-receita-nome"
+          name="input-receita-nome"
+          type="text"
+          [(ngModel)]="this.receita.nome"
+          #nome="ngModel"
+          required />
+
+          <label class = "active" for="input-receita.nome" >Nome do Drink*</label>
+          <div class="red-text" [hidden]="nome.valid || nome.untouched">
+            Por favor, informe o nome do drink.
+          </div>
+
+      </div>
+    </div>
+
+       <div class="row">
+         <div class="input-field col s12">
+            <textarea id="textarea-ingred"
+              name="textarea-ingred"
+              class="materialize-textarea"
+              [(ngModel)]="this.receita.ingred"
+              #ingred="ngModel"
+              required></textarea>
+
+              <label class = "active" for="textarea-ingred">Ingredientes*</label>
+              <div class="red-text" [hidden]="ingred.valid || ingred.untouched">
+                Por favor, informe os ingredientes da receita.
+              </div>
+          </div>
+        </div>
+
+      <div class="row">
+        <div class="input-field col s12">
+            <textarea id="textarea-preparo"
+              name="textarea-preparo"
+              class="materialize-textarea"
+              [(ngModel)]="this.receita.modoprep"
+              #modoprep="ngModel"
+              required></textarea>
+            <label class = "active" for="textarea-preparo">Modo de Preparo*</label>
+            <div class="red-text" [hidden]="modoprep.valid || modoprep.untouched">
+                Por favor, informe o modo de preparo.
+            </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col s12">
+          <p>Gênero:</p>
+          <div class="radio-buttons">
+            <label>
+              <input class="with-gap" name="tipo" type="radio" [(ngModel)]="this.receita.tipo" value="alcoolica" required/>
+              <span>Alcoólica</span>
+            </label>
+            <label>
+              <input class="with-gap" name="tipo" type="radio" [(ngModel)]="receita.tipo" value="nalcoolica" required/>
+              <span>Não Alcoólica</span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s12">
+          <button type="submit" [disabled]="!Form.valid" #submitButton class="btn waves-effect waves-light">Salvar
+            <i class="material-icons right">send</i>
+          </button>
+        </div>
+      </div>
+
+
+
+    </form>
 </div>

@@ -1,5 +1,7 @@
 
-import {Component,OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
+
 
 @Component({
   selector: 'app-menu',
@@ -7,10 +9,16 @@ import {Component,OnInit} from '@angular/core';
   styleUrls: ['./menu.component.css'],
 })
 export class MenuComponent implements OnInit {
-  
-  constructor() {}
 
-  ngOnInit(): void {
-    
+  searchBarHidden = true;
+
+  constructor(private router: Router) {}
+
+  ngOnInit() {
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this.searchBarHidden = this.router.url == '/';
+      }
+    });
   }
 }
