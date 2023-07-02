@@ -22,7 +22,7 @@ export class CadastroComponent implements OnInit {
 
   adicionarReceita(receita: Receita): void {
     this.cadastroStorageService.salvarReceita(receita);
-    this.router.navigate(['/editar', receita.id]);
+    this.router.navigate(['']);
   }
 
   onSubmit(): void {

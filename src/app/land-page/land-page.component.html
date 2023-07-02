@@ -9,7 +9,7 @@
   <h5 class="black-text text-darken-1 center">Seus Drinks:</h5>
      <ul class="center hide-on-med-and-down">
      <div class="collection" *ngIf="(receitas$ | async) as receitas">
-         <a *ngFor="let receita of receitas" [routerLink]="['/editar', receita.id]" class="collection-item">
+         <a *ngFor="let receita of receitas" [routerLink]="['/visualizar', receita.id]" class="collection-item">
           {{ receita.nome }}</a>
 
     </div>

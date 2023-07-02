@@ -1,46 +1,32 @@
 {
   "cadastro": [
     {
-      "id": 1,
-      "nome": "Mojito",
-      "ingred": "Limão, açúcar, folhas de hortelâ, Rum",
-      "modoprep": "bater",
-      "tipo": "alcoolica"
-    },
-    {
-      "id": 2,
-      "nome": "Caipiroska morango",
-      "ingred": "Morango, açúcar, saquê",
-      "modoprep": "bater",
-      "tipo": "alcoólica"
-    },
-    {
       "id": "364",
       "nome": "Alexander",
-      "ingred": "Leite condensado, canela, conhaque",
-      "modoprep": "bater",
-      "tipo": "alcoólica"
+      "ingred": "30 ml de conhaque\n30 ml de creme ou licor de cacau\ncreme de leite\n45 ml de creme de leite\nleite condensado\n15 ml de leite condensado\ncanela em pó\n1 pitada de canela em pó\nnoz-moscada\n1 pitada de noz-moscada\ncubo de gelo\n2 pedras de gelo",
+      "modoprep": "Coloque tudo em uma coqueteleira e chacoalhe.\nCoe a mistura e coloque-a em um copo de coquetel.\nSalpique canela em pó e noz-moscada em pó por cima.\nSe for fazer em grande quantidade multiplique as doses pela quantidade de copos a serem servidos e bata no liquidificador.",
+      "tipo": "alcoolica"
     },
     {
       "id": "810",
-      "nome": "Sakeria de maracujá",
-      "ingred": "Sakê, maracujá",
-      "modoprep": "Bater ",
-      "tipo": "alcoolica"
+      "nome": "Saquerita de maracujá",
+      "ingred": "Polpa de 1 maracujá\n60 ml de saquê\nAçúcar a gosto (cerca de 4 colheres de sopa)\nGelo a gosto",
+      "modoprep": "Em um copo coloque o maracujá e o açúcar.\nAmasse com um socador.\nAcrescente o saquê.\nColoque os cubos de gelo e mexa bem.",
+      "tipo": "nalcoolica"
     },
     {
       "id": "98",
       "nome": "Coquetel de frutas",
-      "ingred": "Frutas de sua preferência: morango, amora, laranja. leite condensado, essência baunilha",
-      "modoprep": "bater as frutas no liquidificador ",
-      "tipo": "não alcoólica"
+      "ingred": "Frutas de sua preferência: morango, amora, laranja. \nLeite condensado, \nEssência baunilha se preferir\nGelo a gosto",
+      "modoprep": "Bater todos os ingredientes no liquidificador",
+      "tipo": "nalcoolica"
     },
     {
       "id": "735",
       "nome": "Drink no abacaxi",
-      "ingred": "meio abacaxi, leite condensado, cachaça ",
+      "ingred": "Meio abacaxi, \nLeite condensado, \n100 ml Cachaça \nGelo",
       "modoprep": "Retirar parcialmente a polpa do abacaxi bater no liquidificador com os demais ingredientes e despejar no abacaxi ",
-      "tipo": "alcoólica"
+      "tipo": "alcoolica"
     },
     {
       "id": "198",
@@ -50,17 +36,17 @@
       "tipo": "alcoolica"
     },
     {
-      "id": "977",
-      "nome": "Margarita",
-      "ingred": "200 ml (4 doses) de tequila/\n100 ml (2 doses) de Cointreau/\n240 ml de suco de limão/\n25ml (1/2 dose) de suco de laranja/\n1 fatia de limão/\n1 xícara de gelo/\nSal /",
-      "modoprep": "Em um coqueteleira coloque a tequila, o Cointreau, o suco de limão e o gelo picado e chacoalhe bem;\nEm um pirex despeje o sal de forma uniforme;\nPegue uma taça, passe o limão na borda e logo em seguida encoste ela no pirex com sal, para fazer a clássica bordinha salgada;\nColoque uma meia fatia de limão na taça para decorar.",
-      "tipo": "alcoolica"
-    },
-    {
       "id": "625",
       "nome": "Moscow mulle",
       "ingred": "200 ml creme de leite fresco/\n1 colher de sopa de açúcar/\nSuco de 1/2 limão taiti/\n1 colher de sopa de gengibre ralado (na hora)\nIngredientes do drink: \n20 ml de suco de limão/\n20 ml de xarope de açúcar/\n2 dash de Angostura bitter/\n50 ml de vodka/\nGelo a gosto",
       "modoprep": "Em uma tigela gelada, coloque o creme de leite, o açúcar, o suco de limão, o gengibre e bata até quase chegar no ponto de chantilly (o ponto certo é quando você levantar o batedor e a espuma cair lentamente). Reserve;/\nEm uma caneca de cobre, coloque o suco de limão, o xarope, a Angostura, a vodka, o gelo e misture bem com uma colher bailarina;/\nAdicione a espuma por cima do drink;\n",
+      "tipo": "alcoolica"
+    },
+    {
+      "id": "693",
+      "nome": "Margarita",
+      "ingred": "200 ml (4 doses) de tequila\n100 ml (2 doses) de Cointreau\n240 ml de suco de limão\n25ml (1/2 dose) de suco de laranja\n1 fatia de limão\n1 xícara de gelo\nSal",
+      "modoprep": "Em um coqueteleira coloque a tequila, o Cointreau, o suco de limão e o gelo picado e chacoalhe bem;.\nEm um pirex despeje o sal de forma uniforme;.\nPegue uma taça, passe o limão na borda e logo em seguida encoste ela no pirex com sal, para fazer a clássica bordinha salgada;.\nColoque uma meia fatia de limão na taça para decorar;.\nCoe a Margarita, despeje o conteúdo na taça e beba com moderação!",
       "tipo": "alcoolica"
     }
   ]

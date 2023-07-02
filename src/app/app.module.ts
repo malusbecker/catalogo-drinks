@@ -16,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 import {NgxWebstorageModule} from 'ngx-webstorage';
 import { EditarComponent } from './editar/editar.component';
 import { CamelCasePipe } from './pipe/camel-case.pipe';
+import { VisualizarComponent } from './visualizar/visualizar.component';
 
 
 
@@ -28,7 +29,8 @@ import { CamelCasePipe } from './pipe/camel-case.pipe';
     FooterComponent,
     LandPageComponent,
     EditarComponent,
-    CamelCasePipe
+    CamelCasePipe,
+    VisualizarComponent
   ],
   imports: [
     BrowserModule,

@@ -15,7 +15,6 @@ export class LandPageComponent implements OnInit{
   receitas$: Observable<Receita[]> | undefined;
 
 
-  @Output() search: EventEmitter<string> = new EventEmitter<string>();
 
   constructor(private receitaObservable: CadastroObservableService) { }
 
@@ -33,9 +32,6 @@ export class LandPageComponent implements OnInit{
   }
 
 
-    onSearch(value: string) {
-    this.search.emit(value);
-  }
 
 }
 
