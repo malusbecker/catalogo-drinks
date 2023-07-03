@@ -4,7 +4,7 @@ Este projeto tem como objetivo o aprendizado e uso da ferramenta Angular CLI em 
 
 ## Endereço de Deploy - GitHub Pages
 
-https://github.com/malusbecker/catalogo-drinks.git
+[https://github.com/malusbecker/catalogo-drinks.git]
 
 ## Protótipo
 
