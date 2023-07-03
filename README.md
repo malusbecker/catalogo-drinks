@@ -1,4 +1,4 @@
-# CatdrinkApp
+# Catalogo-Drinks
 
 Este projeto tem como objetivo o aprendizado e uso da ferramenta Angular CLI em combinação com outras ferramentas. A sua funcionalidade é o registro de dinks para o fim de compor um catálogo, contemplando o nome, os ingredientes e o modo de preparo das bebidas. 
 
